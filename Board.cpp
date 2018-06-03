@@ -102,34 +102,28 @@ string Board ::draw(const unsigned int n){
     const string filename = get_name();
     RGB image[dimx*dimy];
     //initial background
-    /**
-    int rib = 0;
-    int start = rib*boardSize; // 0
-    int end = dimy/boardSize; // 200
-    int haloka = dimy/boardSize; // 200
+	
+   int division = dimx/boardSize; // 200
     
-    for(int i = start; i < boardSize; i++){
-        for(int j = 0; j < boardSize; j++){
-            if(((i % haloka == 0 || j % haloka == 0) && (i != 0 || i != boardSize))){
-                image[dimx*j+i].red = 255;
-                image[dimx*j+i].green = 255;
-                image[dimx*j+i].blue = 255;
-            }
+    for (int i = 0; i < boardSize; ++i) {
+        int Xfrom = i * (dimx/boardSize);
+        for (int r = 0; r < dimx ; ++r) {
+            image[dimx * (r) + Xfrom].red = (121);
+            image[dimx * (r) + Xfrom].green = (160);
+            image[dimx * (r) + Xfrom].blue = (40);
         }
-    }*/
-
-    for (int j = dimy/boardSize; j < dimy; j+=dimy/boardSize)  {  // row
-        for (int i = 0; i < dimx; ++i) { // column
-            image[dimx*j+i].red = 255;
-            image[dimx*j+i].green = 255;
-            image[dimx*j+i].blue = 255;
-            
-             image[dimx*i+j].red = 255;
-            image[dimx*i+j].green = 255;
-            image[dimx*i+j].blue = 255;
-        }
-
     }
+    
+    for (int j = 0; j < boardSize; ++j) {
+        int Yfrom = j * (dimx/boardSize) ;
+        for (int r = 0; r < dimx ; ++r) {
+            image[(r) + (Yfrom * dimx)].red = (121);
+            image[(r) + (Yfrom * dimx)].green = (160);
+            image[(r) + (Yfrom * dimx)].blue = (40);
+        }
+    }
+
+
     //draw X and O
     for(int row = 0; row < boardSize; ++row){
         for(int col = 0; col < boardSize; ++col){
