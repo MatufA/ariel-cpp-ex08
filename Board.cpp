@@ -377,7 +377,7 @@ void Board :: print_X(const int row_cor, const int col_cor , const int image_siz
         image[image_size*(x_mid+row)+(y_mid+row)].blue = 0;
     }*/
     
-}
+//}
 //https://stackoverflow.com/questions/13920576/how-to-draw-a-filled-circle
 /*void Board :: print_O(const int row_cor, const int col_cor , const int boarder_size , int** image){
     cout << "create O" << endl;
