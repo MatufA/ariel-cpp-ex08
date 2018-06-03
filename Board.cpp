@@ -316,7 +316,7 @@ string Board ::get_name()const{
     }
     return filename;
 }
-
+/*
 void Board :: print_X(const int row_cor, const int col_cor , const int image_size , int** image){
     cout << "create X" << endl;
     int bound = image_size / boardSize;
@@ -331,8 +331,8 @@ void Board :: print_X(const int row_cor, const int col_cor , const int image_siz
                 if (diff < 0) {diff = diff*(-1);}
                 for(int x=ib; x<(ib+bound);x++){
                     for(int y=jb; y<(jb+bound);y++){
-                        if(/*(x-y)==diff||(y-x)==diff||*/(x-ib)+(y-jb)==bound)
-                            image[(bound*row_cor)+x][(bound*row_cor)+x] = 150;
+                        if(/*(x-y)==diff||(y-x)==diff||*///(x-ib)+(y-jb)==bound)
+                           // image[(bound*row_cor)+x][(bound*row_cor)+x] = 150;
                         }
                         /*image[(bound*row_cor)+row][(bound*row_cor)+row] = 255;
             
@@ -342,7 +342,7 @@ void Board :: print_X(const int row_cor, const int col_cor , const int image_siz
             }
         }
     }
-    
+    */
     
     /*
     for(int row = 1; row < bound-1; ++row){
