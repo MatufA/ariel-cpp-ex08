@@ -102,7 +102,6 @@ string Board ::draw(const unsigned int n){
     const string filename = get_name();
     RGB image[dimx*dimy];
     //initial background
-    cout << "initial background" << endl;
     /**
     int rib = 0;
     int start = rib*boardSize; // 0
