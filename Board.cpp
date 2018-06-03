@@ -333,11 +333,11 @@ void Board :: print_X(const int row_cor, const int col_cor , const int image_siz
                     for(int y=jb; y<(jb+bound);y++){
                         if(/*(x-y)==diff||(y-x)==diff||*///(x-ib)+(y-jb)==bound)
                            // image[(bound*row_cor)+x][(bound*row_cor)+x] = 150;
-                        }
-                        /*image[(bound*row_cor)+row][(bound*row_cor)+row] = 255;
+                       /* }
+                        image[(bound*row_cor)+row][(bound*row_cor)+row] = 255;
             
                         image[(bound*(row_cor+1))-row][(bound*row_cor)+row] = 255;   */ 
-                    
+                  /* 
                 }
             }
         }
