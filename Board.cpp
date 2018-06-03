@@ -98,7 +98,6 @@ bool operator== (const Board& firstA, const Board& secondB){
 bool operator!= (const Board& firstA, const Board& secondB){ return !(firstA == secondB); } 
 
 string Board ::draw(const unsigned int n){
-    cout << "draw" << endl;
     const int dimx = n, dimy = n;
     const string filename = get_name();
     RGB image[dimx*dimy];
@@ -131,21 +130,19 @@ string Board ::draw(const unsigned int n){
             image[dimx*i+j].blue = 255;
         }
 
-    }/**
+    }
     //draw X and O
     for(int row = 0; row < boardSize; ++row){
         for(int col = 0; col < boardSize; ++col){
             if(gameBoard[row][col] == 'X') print_X(row , col , dimx , image);
             if(gameBoard[row][col] == 'O') print_O(row , col , dimx/boardSize , image);
         }
-    }*/
+    }
     //write the file
-    cout << "write file" << endl;
     ofstream imageFile(filename, ios::out | ios::binary);
     imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
     imageFile.write(reinterpret_cast<char*>(&image), 3*dimx*dimy);
     imageFile.close();
-    cout << "image created: " << filename << endl;
     return filename;   
     }
 
@@ -161,7 +158,6 @@ string Board ::get_name()const{
 }
 
 void Board :: print_X(const int row_cor, const int col_cor , const int image_size , RGB* image){
-    cout << "create X" << endl;
     int bound = image_size / boardSize;
     for(int row = 1; row < bound-1; ++row){
         image[(image_size*row_cor*bound)+(image_size*row)+row].red = 255;
@@ -202,7 +198,6 @@ void Board :: print_X(const int row_cor, const int col_cor , const int image_siz
 }
 //https://stackoverflow.com/questions/13920576/how-to-draw-a-filled-circle
 void Board :: print_O(const int row_cor, const int col_cor , const int boarder_size , RGB* image){
-    cout << "create O" << endl;
    int x_mid = row_cor*boarder_size + boarder_size/2;
     int y_mid = col_cor*boarder_size + boarder_size/2;
     int r = (boarder_size/2)-2;
